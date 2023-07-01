@@ -76,9 +76,9 @@ namespace FurnitureAPI.Services
             return await _context.Furnitures.FirstOrDefaultAsync(f => f.Id == id);
         }
 
-        public async Task<FurnitureServiceResponses> UpdateFurnitre(UpdateFurnitureModel model, FurnitureEntity furniture)
+        public async Task<FurnitureServiceResponses> UpdateFurnitre(UpdateFurnitureModel model, FurnitureEntity furniture, int? discountPercentage)
         {
-            furniture.AvailableQuantity = model.AvailableQuantity;
+            furniture.AvailableQuantity = furniture.AvailableQuantity+model.AvailableQuantity;
             furniture.IsDeleted = model.IsDeleted;
             furniture.FurnitureTypeId = model.FurnitureTypeId;
             furniture.Price = model.Price;
@@ -86,7 +86,27 @@ namespace FurnitureAPI.Services
             furniture.Name = model.Name;
             furniture.Size = model.Size;
 
-            _context.Entry(furniture).State = EntityState.Modified;
+            var discount = await _context.Discounts.FirstOrDefaultAsync(d => d.FurnitureId == furniture.Id);
+            if (discount == null)
+            {
+                if (discountPercentage != null)
+                    _context.Discounts.Add(new DiscountEntity { DeadLine = DateTime.MaxValue, FurnitureId = furniture.Id, Percentage = discountPercentage.Value });
+            }
+
+            else
+            {
+                if (discountPercentage == null)
+                {
+
+                    _context.Entry(discount).State = EntityState.Deleted;
+                }
+                else
+                {
+                    discount.Percentage = discountPercentage.Value;
+                    _context.Entry(discount).State = EntityState.Modified;
+                }
+            }
+
 
             try
             {
@@ -180,6 +200,64 @@ namespace FurnitureAPI.Services
             }
 
             return new FurnitureWithReviewsEntity { OrdersPosition = purcPosition, ReviewsPosition = rewPosition, RatingAverage = ratingAverage, NumberOfReviews = reviews.Count, DiscountPercentage = discountPercentage.Value, OrdersCount = ordersCounter, AvailableQuantity = furniture.AvailableQuantity, Description = furniture.Description, Name = furniture.Name, FurnitureTypeId = furniture.FurnitureTypeId, Id = furniture.Id, ImageUrl = furniture.ImageUrl, IsDeleted = furniture.IsDeleted, Price = furniture.Price, Size = furniture.Size, FurnitureTypeName = furnitureType.Name, Reviews = reviews};
+        }
+
+        public async Task<List<FurnitureTypeEntity>> GetFurnitureTypes()
+        {
+            return await _context.FurnitureTypes.ToListAsync();
+        }
+
+        public async Task<FurnitureServiceResponses> AddDiscountToFurniture(int furnitureId, int percentage)
+        {
+            var furniture = _context.Furnitures.FirstOrDefaultAsync(f => f.Id == furnitureId);
+            if (furniture == null)
+                return FurnitureServiceResponses.NOTFOUND;
+
+            _context.Discounts.Add(new DiscountEntity { DeadLine = DateTime.Parse("2025-01-01"), FurnitureId = furnitureId, Percentage = percentage });
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return FurnitureServiceResponses.SUCCESS;
+            }
+            catch
+            {
+                return FurnitureServiceResponses.ERROR;
+            }
+        }
+
+        public async Task<FurnitureServiceResponses> ModifyDiscount(int furnitureId, int? percentage)
+        {
+            var furniture = await _context.Furnitures.FirstOrDefaultAsync(f => f.Id == furnitureId);
+            if (furniture == null)
+                return FurnitureServiceResponses.NOTFOUND;
+
+            var discount = await _context.Discounts.FirstOrDefaultAsync(d => d.FurnitureId == furnitureId);
+
+            if(discount == null)
+                return FurnitureServiceResponses.NOTFOUND;
+
+            if (percentage != null)
+            {
+                discount.Percentage = percentage.Value;
+                _context.Entry(discount).State= EntityState.Modified;
+            }
+
+            else
+            {
+                _context.Entry(discount).State = EntityState.Deleted;
+            }
+           
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return FurnitureServiceResponses.SUCCESS;
+            }
+            catch
+            {
+                return FurnitureServiceResponses.ERROR;
+            }
         }
     }
 }

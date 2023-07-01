@@ -15,6 +15,7 @@ namespace FurnitureAPI.Mappers
             CreateMap<FurnitureWithRatingAverageEntity, Furniture>();
             CreateMap<FurnitureWithReviewsEntity, FurnitureWithReviews>();
             CreateMap<FurnitureEntity, AddFurnitureResultModel>();
+            CreateMap<FurnitureTypeEntity, FurnitureType>();
         }
     }
 }

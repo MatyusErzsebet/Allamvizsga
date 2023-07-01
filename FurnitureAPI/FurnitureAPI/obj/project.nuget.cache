@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vELfBQUAcixyBb3I0SWUu3Dt8zLRRynFPNMigEKuk9ZOcncs6Ca4wKeCkV18CEsQYjQQ/UZE5rQP+JDTfN05eQ==",
+  "dgSpecHash": "/V7Uv/Uv6CUEJFxfkP0k33858Bez+Zfsww/KE1uifYAWvH2RnY6ww3Dx8Gnw7T6cKA0KSTMNZHnrXbWKHT2i/w==",
   "success": true,
-  "projectFilePath": "D:\\allamvizsga\\api\\FurnitureAPI\\FurnitureAPI\\FurnitureAPI.csproj",
+  "projectFilePath": "D:\\allamvizsga_backend\\Allamvizsga-Backend\\FurnitureAPI\\FurnitureAPI\\FurnitureAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Betty\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Betty\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

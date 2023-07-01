@@ -56,7 +56,7 @@ namespace FurnitureAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddFurniture(AddFurnitureModel model)
         {
             try
@@ -71,6 +71,7 @@ namespace FurnitureAPI.Controllers
                     case FurnitureServiceResponses.SUCCESS:
                     var furnitureModel = _mapper.Map<AddFurnitureResultModel>(furniture);
                     furnitureModel.FurnitureTypeName = (await _service.GetFurnitureTypeById(furnitureModel.FurnitureTypeId)).Name;
+                    
                     return StatusCode(201, new BackendResponse<AddFurnitureResultModel>(furnitureModel));
 
                     default:
@@ -85,7 +86,7 @@ namespace FurnitureAPI.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateFurniture(UpdateFurnitureModel model)
         {
             try
@@ -94,14 +95,20 @@ namespace FurnitureAPI.Controllers
                 if(furniture == null)
                     return NotFound(new BackendResponse<string>("Furniture with given id not found"));
 
-                var result = await _service.UpdateFurnitre(model, furniture);
+                var result = await _service.UpdateFurnitre(model, furniture, model.DiscountPercentage);
                 switch (result)
                 {
                     case FurnitureServiceResponses.NOTFOUND:
                     return NotFound(new BackendResponse<string>("Furniture type with given id not found"));
 
                     case FurnitureServiceResponses.SUCCESS:
-                    return StatusCode(200, new BackendResponse<Furniture>(_mapper.Map<Furniture>(furniture)));
+                        var furnitureResultModel = _mapper.Map<Furniture>(furniture);
+                        if (model.DiscountPercentage == null)
+                            furnitureResultModel.DiscountPercentage = 0;
+                        else
+                            furnitureResultModel.DiscountPercentage = model.DiscountPercentage.Value;
+
+                    return StatusCode(200, new BackendResponse<Furniture>(furnitureResultModel));
 
                     default:
                         return StatusCode(500, new BackendResponse<string>("Error adding furniture"));
@@ -109,6 +116,21 @@ namespace FurnitureAPI.Controllers
 
             }
             catch (Exception ex)
+            {
+                return StatusCode(500, new BackendResponse<string>(ex.Message));
+            }
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "User,Admin")]
+        [Route("FurnitureTypes")]
+        public async Task<IActionResult> GetFurnitureTypes()
+        {
+            try
+            {
+                return Ok(new BackendResponse<List<FurnitureType>>(_mapper.Map<List<FurnitureType>>(await _service.GetFurnitureTypes())));
+            }
+            catch(Exception ex)
             {
                 return StatusCode(500, new BackendResponse<string>(ex.Message));
             }

@@ -6259,11 +6259,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\allamvizsga\\api\\FurnitureAPI\\FurnitureAPI\\FurnitureAPI.csproj",
+      "projectUniqueName": "D:\\allamvizsga_backend\\Allamvizsga-Backend\\FurnitureAPI\\FurnitureAPI\\FurnitureAPI.csproj",
       "projectName": "FurnitureAPI",
-      "projectPath": "D:\\allamvizsga\\api\\FurnitureAPI\\FurnitureAPI\\FurnitureAPI.csproj",
+      "projectPath": "D:\\allamvizsga_backend\\Allamvizsga-Backend\\FurnitureAPI\\FurnitureAPI\\FurnitureAPI.csproj",
       "packagesPath": "C:\\Users\\Betty\\.nuget\\packages\\",
-      "outputPath": "D:\\allamvizsga\\api\\FurnitureAPI\\FurnitureAPI\\obj\\",
+      "outputPath": "D:\\allamvizsga_backend\\Allamvizsga-Backend\\FurnitureAPI\\FurnitureAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
