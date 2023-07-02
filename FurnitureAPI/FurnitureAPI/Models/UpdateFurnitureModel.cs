@@ -35,6 +35,8 @@ namespace FurnitureAPI.Models
 
         [Required(ErrorMessage = "Image url is required")]
         public string ImageUrl { get; set; }
+
+        [Range(1,99, ErrorMessage = "Discount must be greater than 1 and less than 100")]
         public int? DiscountPercentage { get; set; }
     }
 }

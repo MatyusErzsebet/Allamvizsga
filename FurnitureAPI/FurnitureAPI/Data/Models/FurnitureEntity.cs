@@ -41,6 +41,9 @@ namespace FurnitureAPI.Data.Models
         [Required]
         public string ImageUrl { get; set; }
 
+        public string GlbPath { get; set; }
+        public float? GlbScale { get; set; }
+
         public virtual ICollection<ReviewEntity> Reviews { get; set; }
         public virtual ICollection<PurchaseEntity> Purchases { get; set; }
 

@@ -108,6 +108,8 @@ namespace FurnitureAPI.Controllers
                         else
                             furnitureResultModel.DiscountPercentage = model.DiscountPercentage.Value;
 
+                        furnitureResultModel.FurnitureTypeName =  (await _service.GetFurnitureTypeById(furnitureResultModel.FurnitureTypeId)).Name;
+
                     return StatusCode(200, new BackendResponse<Furniture>(furnitureResultModel));
 
                     default:

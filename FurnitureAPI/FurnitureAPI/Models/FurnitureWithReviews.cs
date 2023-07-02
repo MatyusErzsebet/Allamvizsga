@@ -28,6 +28,9 @@ namespace FurnitureAPI.Models
         public int ReviewsPosition { get; set; }
         public int OrdersPosition { get; set; }
 
+        public string GlbPath { get; set; }
+        public float? GlbScale { get; set; }
+
 
         public List<Review> Reviews { get; set; }
 

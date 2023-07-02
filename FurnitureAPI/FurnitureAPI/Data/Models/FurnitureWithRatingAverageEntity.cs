@@ -23,5 +23,7 @@
         public int OrdersCount { get; set; }
         public int DiscountPercentage { get; set; }
         public bool IsDeleted { get; set; }
+        public string GlbPath { get; set; }
+        public float? GlbScale { get; set; }
     }
 }

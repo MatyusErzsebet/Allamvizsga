@@ -65,7 +65,7 @@ namespace FurnitureAPI.Services
                 if (discountPercentage == null)
                     discountPercentage = 0;
                
-                result.Add(new FurnitureWithRatingAverageEntity {IsDeleted = f.IsDeleted, DiscountPercentage = discountPercentage.Value, OrdersCount = ordersCounter, NumberOfReviews = reviewsForFurnitureCt, AvailableQuantity = f.AvailableQuantity, Description = f.Description, FurnitureTypeId = f.FurnitureTypeId, Id = f.Id, ImageUrl = f.ImageUrl, Name = f.Name, Price = f.Price, Size = f.Size, FurnitureTypeName = furnitureType.Name, RatingAverage = ratingAverage });
+                result.Add(new FurnitureWithRatingAverageEntity {GlbPath = f.GlbPath, GlbScale = f.GlbScale, IsDeleted = f.IsDeleted, DiscountPercentage = discountPercentage.Value, OrdersCount = ordersCounter, NumberOfReviews = reviewsForFurnitureCt, AvailableQuantity = f.AvailableQuantity, Description = f.Description, FurnitureTypeId = f.FurnitureTypeId, Id = f.Id, ImageUrl = f.ImageUrl, Name = f.Name, Price = f.Price, Size = f.Size, FurnitureTypeName = furnitureType.Name, RatingAverage = ratingAverage });
             }
 
             return result;
@@ -78,7 +78,7 @@ namespace FurnitureAPI.Services
 
         public async Task<FurnitureServiceResponses> UpdateFurnitre(UpdateFurnitureModel model, FurnitureEntity furniture, int? discountPercentage)
         {
-            furniture.AvailableQuantity = furniture.AvailableQuantity+model.AvailableQuantity;
+            furniture.AvailableQuantity = furniture.AvailableQuantity;
             furniture.IsDeleted = model.IsDeleted;
             furniture.FurnitureTypeId = model.FurnitureTypeId;
             furniture.Price = model.Price;
@@ -199,7 +199,7 @@ namespace FurnitureAPI.Services
                 }
             }
 
-            return new FurnitureWithReviewsEntity { OrdersPosition = purcPosition, ReviewsPosition = rewPosition, RatingAverage = ratingAverage, NumberOfReviews = reviews.Count, DiscountPercentage = discountPercentage.Value, OrdersCount = ordersCounter, AvailableQuantity = furniture.AvailableQuantity, Description = furniture.Description, Name = furniture.Name, FurnitureTypeId = furniture.FurnitureTypeId, Id = furniture.Id, ImageUrl = furniture.ImageUrl, IsDeleted = furniture.IsDeleted, Price = furniture.Price, Size = furniture.Size, FurnitureTypeName = furnitureType.Name, Reviews = reviews};
+            return new FurnitureWithReviewsEntity { GlbPath = furniture.GlbPath, GlbScale = furniture.GlbScale, OrdersPosition = purcPosition, ReviewsPosition = rewPosition, RatingAverage = ratingAverage, NumberOfReviews = reviews.Count, DiscountPercentage = discountPercentage.Value, OrdersCount = ordersCounter, AvailableQuantity = furniture.AvailableQuantity, Description = furniture.Description, Name = furniture.Name, FurnitureTypeId = furniture.FurnitureTypeId, Id = furniture.Id, ImageUrl = furniture.ImageUrl, IsDeleted = furniture.IsDeleted, Price = furniture.Price, Size = furniture.Size, FurnitureTypeName = furnitureType.Name, Reviews = reviews};
         }
 
         public async Task<List<FurnitureTypeEntity>> GetFurnitureTypes()

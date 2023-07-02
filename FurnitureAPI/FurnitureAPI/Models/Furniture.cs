@@ -29,5 +29,8 @@ namespace FurnitureAPI.Models
         public int DiscountPercentage { get; set; }
         public int OrdersCount { get; set; }
 
+        public string GlbPath { get; set; }
+        public float? GlbScale { get; set; }
+
     }
 }
