@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="register_text_margin_start">30dp</dimen>
+    <dimen name="register_text_text_size">24sp</dimen>
+    <dimen name="register_username_layout_margin_top">30dp</dimen>
+    <dimen name="register_text_input_margin_start">30dp</dimen>
+    <dimen name="register_text_input_margin_end">30dp</dimen>
+    <dimen name="register_email_password_layout_margin_top">20dp</dimen>
+    <dimen name="already_have_account_margin_top">20dp</dimen>
+    <dimen name="already_have_account_margin_start">40dp</dimen>
+    <dimen name="log_in_text_margin_start">10dp</dimen>
+    <dimen name="register_input_margin_top">170dp</dimen>
+    <dimen name="already_have_account_text_padding_bottom">20dp</dimen>
+    <dimen name="we_will_send_an_email_text_view_margin_top">20dp</dimen>
+    <dimen name="bottom_navigation_icon_size">40dp</dimen>
+    <dimen name="buttons_corner_radius">20dp</dimen>
+    <dimen name="bottom_navigation_items_padding_bottom">0dp</dimen>
+    <dimen name="card_view_layout_margin">5dp</dimen>
+    <dimen name="card_view_elevation">8dp</dimen>
+    <dimen name="card_max_elevation">10dp</dimen>
+    <dimen name="spinner_height">30dp</dimen>
+</resources>

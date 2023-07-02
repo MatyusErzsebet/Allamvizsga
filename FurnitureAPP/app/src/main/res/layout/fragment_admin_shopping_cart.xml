@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/details_bg_color"
+        tools:context=".fragments.AdminShoppingCartFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adminShoppingCartRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/adminBackToOrdersButton"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/shop_button_color"
+            android:text="Back to orders"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adminShoppingCartRecyclerView" />
+
+        <TextView
+            android:id="@+id/adminShoppingCartTotalPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/shop_button_color"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/adminBackToOrdersButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd = "80dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

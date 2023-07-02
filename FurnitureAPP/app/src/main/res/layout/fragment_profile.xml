@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/details_bg_color"
+        tools:context=".fragments.ShoppingCartFragment">
+
+
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profileUserNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="100dp"
+            android:text="Name:"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
+
+        <TextView
+            android:id="@+id/profileEmailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Email:"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/profileUserNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/profileUserNameTextView" />
+
+        <TextView
+            android:id="@+id/profileBirthDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Birth date:"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/profileEmailTextView"
+            app:layout_constraintTop_toBottomOf="@+id/profileEmailTextView" />
+
+        <TextView
+            android:id="@+id/profileUserNameTextViewContent"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/shop_button_color"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/profileUserNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
+
+        <TextView
+            android:id="@+id/profileEmailTextViewContent"
+            android:textColor="@color/shop_button_color"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/profileEmailTextView"
+            app:layout_constraintTop_toTopOf="@+id/profileEmailTextView" />
+
+        <TextView
+            android:id="@+id/profileBirthDateTextViewContent"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/shop_button_color"
+            android:layout_marginStart="30dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/profileBirthDateTextView"
+            app:layout_constraintTop_toTopOf="@+id/profileBirthDateTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logOutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/shop_button_color"
+            android:text="Log out"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileBirthDateTextViewContent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

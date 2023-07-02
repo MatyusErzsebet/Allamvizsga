@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/card_view_layout_margin"
+    android:layout_marginEnd="@dimen/card_view_layout_margin"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/card_view_elevation"
+    app:cardMaxElevation="@dimen/card_max_elevation"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:id="@+id/adminOrderListItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/adminOrderListItemImageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="@+id/adminOrderListItemName"
+            app:layout_constraintTop_toBottomOf="@+id/adminOrderListItemName" />
+
+        <TextView
+            android:id="@+id/adminOrderListItemType"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/adminOrderListItemImageView"
+            app:layout_constraintTop_toTopOf="@+id/adminOrderListItemImageView" />
+
+        <TextView
+            android:id="@+id/adminOrderListItemSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/adminOrderListItemImageView"
+            app:layout_constraintStart_toEndOf="@+id/adminOrderListItemImageView" />
+
+
+        <TextView
+        android:id="@+id/adminOrderListItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/shop_button_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/adminOrderListItemSize"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/adminOrderItemQuantity"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adminOrderListItemImageView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="Quantity: "
+            app:layout_constraintEnd_toStartOf="@+id/adminOrderItemQuantity"
+            app:layout_constraintTop_toTopOf="@+id/adminOrderItemQuantity" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

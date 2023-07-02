@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.AddOrUpdateFurnitureFragment"
+    android:background="@color/details_bg_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/adminAddOrUpdateCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:elevation="10dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/adminAddOrUpdateFurnitureImageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adminAddOrUpdateFurnitureNameInpLay"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@null"
+            app:boxBackgroundMode="outline"
+            android:hint="name"
+            app:boxStrokeColor="@color/white"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toStartOf="@+id/adminAddOrUpdateCardView"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateCardView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adminAddOrUpdateFurnitureNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                android:background="@drawable/edit_text_bg_selector"
+                android:paddingStart="10dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/addOrUpdateAdminFurnT"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="25dp"
+            android:text="type: "
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/adminAddOrUpdateFurnitureNameInpLay"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateFurnitureNameInpLay" />
+
+        <Spinner
+            android:id="@+id/adminAddOrUpdateSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/addOrUpdateAdminFurnT"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateFurnitureNameInpLay" />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adminAddOrUpdateFurniturePriceInpLay"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/white"
+            android:hint="price (Lei)"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="@+id/adminAddOrUpdateCardView"
+            app:layout_constraintTop_toTopOf="@+id/adminAddOrUpdateFurnitureNameInpLay">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adminAddOrUpdateFurniturePriceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/edit_text_bg_selector"
+                android:inputType="numberDecimal"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adminAddOrUpdateQuantityInpLay"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:hint="quantity"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/white"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="@+id/adminAddOrUpdateFurniturePriceInpLay"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateFurniturePriceInpLay"
+            tools:ignore="RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adminAddOrUpdateQuantityEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_bg_selector"
+                android:inputType="number"
+                android:paddingStart="10dp"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adminAddOrUpdateDiscountInpLay"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/white"
+            app:errorEnabled="true"
+            android:hint="discount (%)"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/adminAddOrUpdateQuantityInpLay"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateQuantityInpLay"
+            tools:ignore="RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adminAddOrUpdateDiscountEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_bg_selector"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/adminAddOrUpdateFurnitureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/shop_button_color"
+            android:scaleType="fitXY"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateDescriptionInpLay" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adminAddOrUpdateSizeInpLay"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:hint="size (cm)"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/white"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toStartOf="@+id/addOrUpdateAdminFurnT"
+            app:layout_constraintTop_toBottomOf="@+id/addOrUpdateAdminFurnT">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adminAddOrUpdateSizeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_bg_selector"
+                android:paddingStart="10dp"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adminAddOrUpdateDescriptionInpLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:background="@null"
+            android:hint="description"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/white"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateDiscountInpLay">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adminAddOrUpdateDescriptionTextView"
+                android:gravity="top|start"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/edit_text_bg_selector" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@null"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/white"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adminAddOrUpdateFurnitureButton" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

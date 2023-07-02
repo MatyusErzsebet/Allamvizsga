@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="roundedButtonStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/rounded_button_border</item>
+    </style>
+
+
+    <style name="ratingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/unchecked_stars_color</item>
+        <item name="colorControlActivated">@color/stars_color</item>
+    </style>
+
+
+
+
+</resources>

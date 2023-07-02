@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- custom error state drawable -->
+
+    <!-- Do whatever you want for all other states -->
+    <item android:drawable="@drawable/rounded_edit_text"/>
+
+    <item android:drawable="@drawable/rounded_edit_text" android:state_focused="true"/>
+
+</selector>

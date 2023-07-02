@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/card_view_layout_margin"
+    android:layout_marginEnd="@dimen/card_view_layout_margin"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/card_view_elevation"
+    app:cardMaxElevation="@dimen/card_max_elevation"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/adminPurchaseListItemAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/adminPurchaseListItemUserName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/adminPurchaseListItemAvatar"
+            app:layout_constraintTop_toTopOf="@+id/adminPurchaseListItemAvatar" />
+
+        <ImageView
+            android:id="@+id/adminPurchaseListItemDateImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/date"
+            app:layout_constraintStart_toStartOf="@+id/adminPurchaseListItemAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/adminPurchaseListItemAvatar" />
+
+        <TextView
+            android:id="@+id/adminPurchaseListItemDate"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/adminPurchaseListItemDateImage"
+            app:layout_constraintTop_toTopOf="@+id/adminPurchaseListItemDateImage" />
+
+        <ImageView
+            android:id="@+id/adminPurchaseListItemCountImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_shoplogo_black"
+            app:layout_constraintStart_toStartOf="@+id/adminPurchaseListItemDateImage"
+            app:layout_constraintTop_toBottomOf="@+id/adminPurchaseListItemDateImage" />
+
+        <TextView
+            android:id="@+id/adminPurchaseListItemCount"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/adminPurchaseListItemCountImage"
+            app:layout_constraintTop_toTopOf="@+id/adminPurchaseListItemCountImage" />
+
+        <ImageView
+            android:id="@+id/adminPurchaseListAddressImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/address"
+            app:layout_constraintStart_toStartOf="@+id/adminPurchaseListItemCountImage"
+            app:layout_constraintTop_toBottomOf="@+id/adminPurchaseListItemCountImage" />
+
+        <TextView
+            android:id="@+id/adminPurchaseListAddress"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/adminPurchaseListAddressImage"
+            app:layout_constraintTop_toTopOf="@+id/adminPurchaseListAddressImage" />
+
+        <TextView
+            android:id="@+id/adminPurchaseListPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/shop_button_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adminPurchaseListAddressImage" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/adminDetailsButton"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="75dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/shop_button_color"
+            android:text="Details"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/adminPurchaseListAddressImage" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adminDetailsButton"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

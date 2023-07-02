@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FurnitureAPP</string>
+    <string name="register_text">Register</string>
+    <string name="birth_date_text">Birth date</string>
+    <string name="password_hint_text">Password</string>
+    <string name="email_hint_text">Email</string>
+    <string name="first_name_hint_text">First name</string>
+    <string name="last_name_hint_text">Last name</string>
+    <string name="already_have_account_text">Already have an account?</string>
+    <string name="log_in_text">Log in</string>
+    <string name="forgot_password_text_2">Forgot password</string>
+    <string name="email_me_text">Email me</string>
+    <string name="update_text">update</string>
+    <string name="code_text">Code</string>
+    <string name="we_will_send_email_password_change">We will send a code to the given mail to change your password!</string>
+    <string name="validate_password_change">Validate password change</string>
+    <string name="new_password_text">New password</string>
+    <string name="type_code_and_new_password">Please type the sent code and the new password!</string>
+</resources>

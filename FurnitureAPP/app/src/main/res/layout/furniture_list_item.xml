@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_view_layout_margin"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/card_view_elevation"
+    app:cardMaxElevation="@dimen/card_max_elevation"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/itemCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/furnitureListItemImageview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+
+            android:id="@+id/furnitureListItemNameTextView"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/nmTextColor"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/itemCardView"
+            app:layout_constraintTop_toBottomOf="@+id/itemCardView" />
+
+        <TextView
+            android:id="@+id/furnitureListItemTypeTextView"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="@color/hint_color"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/furnitureListItemNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureListItemNameTextView" />
+
+        <TextView
+            android:id="@+id/furnitureListItemPriceTextView"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/itemCardView"
+            app:layout_constraintTop_toTopOf="@+id/furnitureListItemNameTextView" />
+
+        <RatingBar
+            android:id="@+id/listRatingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:numStars="5"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:theme="@style/ratingBar"
+            app:layout_constraintEnd_toStartOf="@+id/numberOfReviewsTextView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureListItemPriceTextView" />
+
+        <TextView
+            android:id="@+id/furnitureListItemInStockTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/isAvailableImageView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureListItemTypeTextView" />
+
+
+        <TextView
+            android:id="@+id/numberOfReviewsTextView"
+            android:layout_width="47dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/itemCardView"
+            app:layout_constraintTop_toTopOf="@+id/listRatingBar" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureListItemInStockTextView" />
+
+        <ImageView
+            android:id="@+id/isAvailableImageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@+id/furnitureListItemNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureListItemTypeTextView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_marginStart="-0dp"
+        android:layout_marginTop="0dp"
+        android:layout_height="50dp"
+        android:layout_width="50dp">
+
+        <TextView
+            android:id="@+id/furnitureListItemDiscountTextView"
+            android:layout_width="50dp"
+            android:background="@drawable/rounded_textview"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

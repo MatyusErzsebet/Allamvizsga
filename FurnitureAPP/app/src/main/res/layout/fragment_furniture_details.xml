@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.FurnitureDetailsFragment"
+    android:background="@color/details_bg_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detailItemCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:elevation="10dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/furnitureItemImageview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+
+            android:id="@+id/furnitureItemNameTextView"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/nmTextColor"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/detailItemCardView"
+            app:layout_constraintTop_toBottomOf="@+id/detailItemCardView" />
+
+        <TextView
+            android:id="@+id/furnitureItemTypeTextView"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="@color/hint_color"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/furnitureItemNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureItemNameTextView" />
+
+        <TextView
+            android:id="@+id/furnitureItemPriceTextView"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailItemCardView"
+            app:layout_constraintTop_toTopOf="@+id/furnitureItemNameTextView" />
+
+        <RatingBar
+            android:id="@+id/detailRatingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:numStars="5"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:theme="@style/ratingBar"
+            app:layout_constraintEnd_toEndOf="@+id/detailItemCardView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureItemPriceTextView" />
+
+        <TextView
+            android:id="@+id/furnitureItemInStockTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/isAvailableDetailImageView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureItemTypeTextView" />
+
+
+        <TextView
+            android:id="@+id/numberOfReviewsDetailTextView"
+            android:layout_width="47dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-2dp"
+            app:layout_constraintStart_toEndOf="@+id/detailRatingBar"
+            app:layout_constraintTop_toTopOf="@+id/detailRatingBar" />
+
+
+        <!--        <RelativeLayout android:layout_height="20dp"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/furnitureListItemInStockTextView"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"/>-->
+
+        <ImageView
+            android:id="@+id/isAvailableDetailImageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@+id/furnitureItemNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/furnitureItemTypeTextView" />
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:translationZ="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/furnitureItemDiscountTextView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_textview"
+                android:gravity="center"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/shopButtonDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/shop_button_color"
+            android:scaleType="fitXY"
+            android:text="Shop now"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/isAvailableDetailImageView" />
+
+        <TextView
+            android:id="@+id/positionInReviewsTextView"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goToVrTextView" />
+
+        <TextView
+            android:id="@+id/positionInPurchasesTextView"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/positionInReviewsTextView" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Size: "
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/positionInReviewsTextView"
+            app:layout_constraintTop_toBottomOf="@+id/positionInReviewsTextView" />
+
+        <TextView
+            android:id="@+id/sizeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Description:"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addReviewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/dark_green"
+            android:scaleType="fitXY"
+            android:text="Add"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/reviewEditText"
+            app:layout_constraintTop_toBottomOf="@+id/reviewEditText" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_star"
+            style="?android:attr/ratingBarStyleSmall"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:theme="@style/ratingBar"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:isIndicator="false"
+            app:layout_constraintStart_toStartOf="@+id/reviewEditText"
+            app:layout_constraintTop_toTopOf="@+id/addReviewButton"
+            android:max="5"/>
+
+        <EditText
+            android:id="@+id/reviewEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:gravity="start|top"
+            android:background="@drawable/edittext_with_border"
+            android:paddingLeft="10dp"
+            android:hint="Add your review"
+            android:inputType="textMultiLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviewRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Reviews:"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/reviewEditText"
+            app:layout_constraintTop_toBottomOf="@+id/addReviewButton" />
+
+        <TextView
+            android:id="@+id/youMightAlsoLikeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:text="You might also like:"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reviewRecyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/similarFurnituresRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youMightAlsoLikeTextView"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/goToVrTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/dark_green"
+            android:text="TRY IN 3D ROOM"
+            android:visibility="gone"
+            android:textColor="@color/dark_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shopButtonDetail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
